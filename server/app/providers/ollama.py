@@ -2,17 +2,18 @@ import base64
 
 import httpx
 
-from app.config import get_settings
+from app.config import settings
 from app.providers.base import Provider
 
 
 class OllamaProvider(Provider):
-    async def analyze_image(self, prompt: str, image_bytes: bytes, content_type: str) -> str:
-        settings = get_settings()
+    
+    async def analyze_image(self, prompt: str, image_bytes: bytes, content_type: str, tags: list[str]) -> str:
         if not settings.ollama_model:
             raise ValueError("OLLAMA_MODEL is not set")
 
-        system_prompt = f"/no_think {settings.system_prompt}".strip()
+        # print("======>>>>>>>>>", settings.system_prompt.format(hashtags=",".join(tags)))
+        system_prompt = f"/no_think {settings.system_prompt.format(hashtags=",".join(tags))}".strip()
         payload = {
             "model": settings.ollama_model,
             "messages": [
@@ -31,4 +32,5 @@ class OllamaProvider(Provider):
             response.raise_for_status()
             data = response.json()
 
+        
         return data["message"]["content"]

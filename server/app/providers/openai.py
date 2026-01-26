@@ -1,14 +1,15 @@
 import base64
-
+import logging
 import httpx
 
-from app.config import get_settings
+from app.config import settings
 from app.providers.base import Provider
 
+logger = logging.getLogger(__name__)
 
 class OpenAIProvider(Provider):
-    async def analyze_image(self, prompt: str, image_bytes: bytes, content_type: str) -> str:
-        settings = get_settings()
+    async def analyze_image(self, prompt: str, image_bytes: bytes, content_type: str, tags: list[str]) -> str:
+        
         if not settings.openai_api_key:
             raise ValueError("OPENAI_API_KEY is not set")
         if not settings.openai_model:
@@ -20,7 +21,7 @@ class OpenAIProvider(Provider):
             "messages": [
                 {
                     "role": "system",
-                    "content": settings.system_prompt,
+                    "content": settings.system_prompt.format(hashtags=",".join(tags)),
                 },
                 {
                     "role": "user",
