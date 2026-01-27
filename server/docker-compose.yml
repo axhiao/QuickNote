@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quicknote-server
+    depends_on:
+      - memos
+    env_file:
+      - .env
+    environment:
+      MEMOS_BASE_URL: "http://memos:5230"
+    ports:
+      - "8000:8000"
+    # volumes:
+    #   - .:/app
+    # command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  memos:
+    image: neosmemo/memos:canary
+    container_name: memos
+    ports:
+      - "5230:5230"
+    volumes:
+      - memos_data:/var/opt/memos
+    restart: unless-stopped
+
+volumes:
+  memos_data:
