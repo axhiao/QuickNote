@@ -16,6 +16,10 @@ class Settings():
         self.ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
         self.ollama_model = os.getenv("OLLAMA_MODEL", "").strip()
         
+        # gemini
+        self.gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        self.gemini_model   = os.getenv("GEMINI_MODEL", "").strip()
+        
         sys_prompt = os.getenv(
             "SYSTEM_PROMPT",
             "You are a precise image analysis and transcription system. Inspect the image and extract the content relevant to the user request. Return only valid Markdown as the output.",
@@ -28,8 +32,5 @@ class Settings():
         self.environment = os.getenv("ENVIRONMENT", "dev").strip() 
         self.log_level   = os.getenv("LOG_LEVEL", "INFO").strip()
         
-        
-        
-
 
 settings = Settings()
