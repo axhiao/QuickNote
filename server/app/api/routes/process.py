@@ -86,13 +86,16 @@ async def parse_image_data(
     tags = [key for key in tags.keys()]
     
     # call llm
-    llm = await _llm_analyze_image(
-        prompt, 
-        image_bytes, 
-        content_type, 
-        provider, 
-        tags
-    )
+    try:
+        llm = await _llm_analyze_image(
+            prompt, 
+            image_bytes, 
+            content_type, 
+            provider, 
+            tags
+        )
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"LLM analyze image failed: {e}") from e
     # store to memos
     memos = await _upload_to_memos(
         client,

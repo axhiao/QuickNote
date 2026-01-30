@@ -7,3 +7,4 @@ pytest
 python-multipart
 ollama
 google-genai
+tenacity
