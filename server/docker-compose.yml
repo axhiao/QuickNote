@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
 
   memos:
-    image: neosmemo/memos:canary
+    image: neosmemo/memos:stable
     container_name: memos
     ports:
       - "5230:5230"
