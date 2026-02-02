@@ -59,12 +59,10 @@ Example:
 
 ## Live Demo
 ### iPhone
-<video src="./assets/live_demo.mp4" controls="controls" width="100%" height="auto">
-</video>
+[https://youtu.be/khHIss2ajnc](https://youtu.be/khHIss2ajnc)
 
 ### macOS
-<video src="./assets/live_demo_mac.mp4" controls="controls" width="100%" height="auto">
-</video>
+[https://youtu.be/SHuq5kxRCWA](https://youtu.be/SHuq5kxRCWA)
 
 ## Quick Start
 QuickNote depends on Memos. Users can deploy Memos first independently, then configure and run the QuickNote server. Or to make a quick setup, users can also use below docker compose. 
