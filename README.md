@@ -16,11 +16,18 @@ The core idea is simple:
 QuickNote was inspired by the discussion around Microsoft [Recall](https://en.wikipedia.org/wiki/Windows_Recall), but follows the opposite design philosophy: selective memory over passive, always-on recording.
 
 ## How It Works
-```text
-Screenshot + prompt
-      -> Vision-Language model
-      -> Parsed Markdown
-      -> Memos
+```
+            IOS / MacOS (Shortcuts)
+               │
+               ▼
+┌───────────────────────────────┐
+│            Server             │
+│   (VisionLanguage Model)      │
+│            parse              │
+└──────────────┬────────────────┘
+               │ 
+               ▼
+              Memos
 ```
 
 ## What QuickNote Solves
