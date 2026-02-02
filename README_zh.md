@@ -59,12 +59,11 @@ QuickNote 当前以 [Memos](https://github.com/usememos/memos) 作为笔记界�
 
 ## 演示
 ### iPhone
-<video src="./assets/live_demo.mp4" controls="controls" width="100%" height="auto">
-</video>
+
+[https://youtu.be/khHIss2ajnc](https://youtu.be/khHIss2ajnc)
 
 ### macOS
-<video src="./assets/live_demo_mac.mp4" controls="controls" width="100%" height="auto">
-</video>
+[https://youtu.be/SHuq5kxRCWA](https://youtu.be/SHuq5kxRCWA)
 
 ## 快速开始
 QuickNote 依赖 Memos。请先独立部署 Memos，再配置并启动 QuickNote 服务端。也可以使用下面的docker compsoe 进行快速部署，里面包含了 Memos 服务。
