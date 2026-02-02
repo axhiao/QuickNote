@@ -48,7 +48,7 @@ QuickNote 当前以 [Memos](https://github.com/usememos/memos) 作为笔记界�
 
 [QuickNote iOS Shortcut](https://www.icloud.com/shortcuts/66484a23c6094afbb6c2078c5cd237d9)
 
-导入后，请将请求 URL 修改为你自己的 QuickNote 服务地址。
+导入后，请将请求 URL 修改为你自己的 QuickNote 服务地址。IOS 可以设置手机的 action 按钮绑定 Shortcuts 进行触发，非常方便快捷。
 
 ## macOS 触发方式（推荐）
 在 macOS 上，建议使用 Raycast 绑定全局热键来触发 Shortcut。

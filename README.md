@@ -48,7 +48,7 @@ Use this shortcut template:
 
 [QuickNote iOS Shortcut](https://www.icloud.com/shortcuts/66484a23c6094afbb6c2078c5cd237d9)
 
-After importing it, update the request URL so screenshots are sent to your own QuickNote server.
+After importing it, update the request URL so screenshots are sent to your own QuickNote server. On iPhone, users can bind the Action Button to the Shortcut to trigger it.
 
 ## macOS Trigger (Suggested)
 On macOS, you can bind the Shortcut to a global hotkey with Raycast.
